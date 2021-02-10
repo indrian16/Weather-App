@@ -1,4 +1,4 @@
-package io.indrian.weatherapp.utils.extentions
+package io.indrian.weatherapp.utils.extensions
 
 import android.content.Context
 import android.net.ConnectivityManager

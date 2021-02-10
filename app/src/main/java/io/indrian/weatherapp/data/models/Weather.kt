@@ -27,9 +27,9 @@ data class Weather(
     // Main Data
     @ColumnInfo(name = "feels_like")
     val feelsLike: Double = 0.0,
-    val humidity: Int = 0,
+    val humidity: Int = 88,
     val pressure: Int = 0,
-    val temp: Double = 0.0,
+    val temp: Double = 298.72,
     val tempMax: Double = 0.0,
     val tempMin: Double = 0.0,
 
@@ -37,9 +37,9 @@ data class Weather(
     @ColumnInfo(name = "wind_deg")
     val windDeg: Int = 0,
     @ColumnInfo(name = "wind_speed")
-    val windSpeed: Double = 0.0,
+    val windSpeed: Double = 3.09,
 
     // Clouds
     @ColumnInfo(name = "clouds_all")
-    val cloudsAll: Int = 0
+    val cloudsAll: Int = 20
 )

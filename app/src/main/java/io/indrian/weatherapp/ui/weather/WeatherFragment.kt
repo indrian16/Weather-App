@@ -1,5 +1,6 @@
 package io.indrian.weatherapp.ui.weather
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,10 @@ import androidx.lifecycle.Observer
 import io.indrian.weatherapp.R
 import io.indrian.weatherapp.data.models.Weather
 import io.indrian.weatherapp.ui.dialogs.LoadingDialogFragment
+import io.indrian.weatherapp.utils.extensions.displayCelsius
+import io.indrian.weatherapp.utils.extensions.displayDate
+import io.indrian.weatherapp.utils.extensions.displayCountryName
+import io.indrian.weatherapp.utils.extensions.displayWindSpeed
 import kotlinx.android.synthetic.main.clouds_card_layout.*
 import kotlinx.android.synthetic.main.fragment_weather.*
 import kotlinx.android.synthetic.main.humidity_card_layout.*
@@ -66,21 +71,26 @@ class WeatherFragment : Fragment() {
         loadingDialogFragment.dismiss()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun weatherDisplay(weather: Weather) {
         tv_city.text = weather.city
-        tv_country.text = weather.countryId
-        tv_date.text = weather.date.toString()
-        tv_temp.text = weather.temp.toString()
+        tv_country.text = weather.countryId.displayCountryName()
+        tv_date.text = weather.date.displayDate()
+        tv_temp.text = weather.temp.displayCelsius()
         tv_desc.text = weather.description
-        tv_wind.text = weather.windSpeed.toString()
-        tv_humidity.text = weather.humidity.toString()
-        tv_clouds.text = weather.cloudsAll.toString()
+        tv_wind.text = weather.windSpeed.displayWindSpeed()
+        tv_humidity.text = "${weather.humidity}%"
+        tv_clouds.text = "${weather.cloudsAll}%"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.fetchWeatherByCity("jakarta")
         viewModel.weatherState.observe(this, weatherStateObserver)
+
+        btn_get_weather.setOnClickListener {
+            viewModel.fetchWeatherByCity("tenggarong")
+        }
     }
 
     companion object {

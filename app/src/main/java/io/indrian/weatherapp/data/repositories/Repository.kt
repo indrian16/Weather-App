@@ -2,7 +2,7 @@ package io.indrian.weatherapp.data.repositories
 
 import android.content.Context
 import io.indrian.weatherapp.data.models.Weather
-import io.indrian.weatherapp.utils.extentions.isNetworkConnected
+import io.indrian.weatherapp.utils.extensions.isNetworkConnected
 import io.reactivex.Single
 
 class Repository(

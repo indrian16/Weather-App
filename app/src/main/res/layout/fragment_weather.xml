@@ -24,7 +24,7 @@
         style="@style/TextAppearance.MdcTypographyStyles.Headline6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/country"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -36,7 +36,7 @@
         style="@style/TextAppearance.MdcTypographyStyles.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/date"
         app:layout_constraintStart_toStartOf="@+id/tv_country"
         app:layout_constraintTop_toBottomOf="@+id/tv_country" />
