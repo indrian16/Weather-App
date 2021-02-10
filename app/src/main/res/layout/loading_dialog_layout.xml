@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/loading_dialog_width"
+    android:layout_height="@dimen/loading_dialog_height"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    app:cardBackgroundColor="@color/color_primary"
+    >
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_rawRes="@raw/loading_46361_weather_icon_mostly_sunny"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
+
+</com.google.android.material.card.MaterialCardView>

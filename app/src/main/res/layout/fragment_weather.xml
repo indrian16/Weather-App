@@ -46,7 +46,7 @@
         style="@style/TextAppearance.MdcTypographyStyles.Headline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="26dp"
         android:text="@string/today"
         android:textColor="@color/black"
         android:textStyle="bold"
