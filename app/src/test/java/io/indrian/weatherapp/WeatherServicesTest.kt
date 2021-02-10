@@ -1,4 +1,4 @@
-package io.indrian.weatherapp.data.remote
+package io.indrian.weatherapp
 
 import io.indrian.weatherapp.data.remote.responses.WeatherResponse
 import io.indrian.weatherapp.data.remote.services.WeatherService
