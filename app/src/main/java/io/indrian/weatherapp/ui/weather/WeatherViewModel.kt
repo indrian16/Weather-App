@@ -8,6 +8,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
+import java.util.concurrent.TimeUnit
 
 class WeatherViewModel(private val repository: Repository) : ViewModel() {
 
@@ -18,12 +19,15 @@ class WeatherViewModel(private val repository: Repository) : ViewModel() {
         get() = _weatherState
 
     init {
+        Timber.d("WeatherState.Init")
         _weatherState.value = WeatherState.Init
     }
 
     fun fetchWeatherByCity(city: String) {
         val disposable = repository.getWeatherByCity(city)
             .subscribeOn(Schedulers.io())
+                // This feature is temporary
+            .delay(500, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe {
                 Timber.d("WeatherState.Loading")
