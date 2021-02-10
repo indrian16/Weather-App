@@ -4,12 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import io.indrian.weatherapp.utils.AppConstants
+import java.util.*
 
 @Entity(tableName = AppConstants.WEATHER_TABLE)
 data class Weather(
     @PrimaryKey
     val id: Int = 0,
     var city: String = "Jakarta",
+    val date: Date = Date(),
 
     // Weather
     val description: String = "",
