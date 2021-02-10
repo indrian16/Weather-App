@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -70,6 +71,11 @@ dependencies {
     def koin_version = "2.2.2"
     implementation "org.koin:koin-android:$koin_version"
     testImplementation "org.koin:koin-test:$koin_version"
+
+    // Room
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     // Test
     testImplementation 'junit:junit:4.13.1'

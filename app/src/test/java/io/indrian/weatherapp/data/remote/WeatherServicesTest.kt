@@ -12,7 +12,7 @@ import org.koin.test.KoinTestRule
 import org.koin.test.inject
 import retrofit2.HttpException
 
-class WeatherEntityServicesTest : KoinTest {
+class WeatherServicesTest : KoinTest {
 
     private val weatherService by inject<WeatherService>()
 
