@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import io.indrian.weatherapp.R
 import io.indrian.weatherapp.ui.dialogs.LoadingDialogFragment
+import org.koin.android.viewmodel.ext.android.viewModel
 import timber.log.Timber
 
 class WeatherFragment : Fragment() {
+
+    private val viewModel: WeatherViewModel by viewModel()
 
     private val loadingDialogFragment = LoadingDialogFragment.newInstance()
 
@@ -39,7 +42,7 @@ class WeatherFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        //showLoading()
+        viewModel.fetchWeatherByCity("jakarta")
     }
 
     companion object {
