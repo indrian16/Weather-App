@@ -11,10 +11,10 @@ class WeatherMapper : BaseMapper<WeatherResponse, Weather> {
         val coordinate = entity.coord
         val main = entity.main
         val wind = entity.wind
-        val rain = entity.rain
         val clouds = entity.clouds
         return Weather(
             city = entity.name,
+            countryId = entity.sys.country,
             description = weather.description,
             icon = weather.icon,
             main = weather.main,
@@ -27,7 +27,6 @@ class WeatherMapper : BaseMapper<WeatherResponse, Weather> {
             tempMin = main.tempMin,
             windDeg = wind.deg,
             windSpeed = wind.speed,
-            rainH = rain.h,
             cloudsAll = clouds.all
         )
     }

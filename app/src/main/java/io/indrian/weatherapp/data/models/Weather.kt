@@ -11,6 +11,8 @@ data class Weather(
     @PrimaryKey
     val id: Int = 0,
     var city: String = "Jakarta",
+    @ColumnInfo(name = "country_id")
+    var countryId: String = "ID",
     val date: Date = Date(),
 
     // Weather
@@ -36,10 +38,6 @@ data class Weather(
     val windDeg: Int = 0,
     @ColumnInfo(name = "wind_speed")
     val windSpeed: Double = 0.0,
-
-    // Rain
-    @ColumnInfo(name = "rain_h")
-    val rainH: Double = 0.0,
 
     // Clouds
     @ColumnInfo(name = "clouds_all")
