@@ -1,6 +1,7 @@
 package io.indrian.weatherapp
 
 import android.app.Application
+import io.indrian.weatherapp.di.appModule
 import io.indrian.weatherapp.di.localModule
 import io.indrian.weatherapp.di.remoteModule
 import io.indrian.weatherapp.di.repositoryModule
@@ -22,7 +23,8 @@ class WeatherApp : Application() {
             modules(
                 remoteModule,
                 localModule,
-                repositoryModule
+                repositoryModule,
+                appModule
             )
         }
     }

@@ -39,7 +39,7 @@ class WeatherFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        showLoading()
+        //showLoading()
     }
 
     companion object {
