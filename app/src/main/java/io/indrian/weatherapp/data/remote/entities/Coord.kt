@@ -1,4 +1,4 @@
-package io.indrian.weatherapp.data.models
+package io.indrian.weatherapp.data.remote.entities
 
 
 import com.google.gson.annotations.SerializedName

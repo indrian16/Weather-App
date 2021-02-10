@@ -1,9 +1,9 @@
-package io.indrian.weatherapp.data.models
+package io.indrian.weatherapp.data.remote.entities
 
 
 import com.google.gson.annotations.SerializedName
 
-data class Weather(
+data class WeatherEntity(
     @SerializedName("description")
     val description: String = "",
     @SerializedName("icon")

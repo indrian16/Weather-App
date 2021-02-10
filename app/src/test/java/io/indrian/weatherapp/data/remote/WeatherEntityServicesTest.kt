@@ -10,8 +10,9 @@ import org.junit.Test
 import org.koin.test.KoinTest
 import org.koin.test.KoinTestRule
 import org.koin.test.inject
+import retrofit2.HttpException
 
-class WeatherServicesTest : KoinTest {
+class WeatherEntityServicesTest : KoinTest {
 
     private val weatherService by inject<WeatherService>()
 
@@ -40,6 +41,18 @@ class WeatherServicesTest : KoinTest {
     }
 
     @Test
+    fun `test fail get weather by city name`() {
+
+        val observer = TestObserver<WeatherResponse>()
+        weatherService.getWeatherByCity("")
+            .subscribe(observer)
+
+        observer.assertFailure(HttpException::class.java)
+
+        observer.dispose()
+    }
+
+    @Test
     fun `test get weather by coordinate`() {
 
         val observer = TestObserver<WeatherResponse>()
@@ -53,6 +66,18 @@ class WeatherServicesTest : KoinTest {
 
         assertEquals("Samarinda", results.name)
         assertEquals("ID", results.sys.country)
+
+        observer.dispose()
+    }
+
+    @Test
+    fun `test fail get weather by coordinate`() {
+
+        val observer = TestObserver<WeatherResponse>()
+        weatherService.getWeatherCoordinate(lat = "", lon =  "")
+            .subscribe(observer)
+
+        observer.assertFailure(HttpException::class.java)
 
         observer.dispose()
     }

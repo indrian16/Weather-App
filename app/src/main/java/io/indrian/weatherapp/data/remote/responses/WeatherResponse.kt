@@ -2,7 +2,7 @@ package io.indrian.weatherapp.data.remote.responses
 
 
 import com.google.gson.annotations.SerializedName
-import io.indrian.weatherapp.data.models.*
+import io.indrian.weatherapp.data.remote.entities.*
 
 data class WeatherResponse(
     @SerializedName("base")
@@ -30,7 +30,7 @@ data class WeatherResponse(
     @SerializedName("visibility")
     val visibility: Int = 0,
     @SerializedName("weather")
-    val weather: List<Weather> = listOf(),
+    val weatherEntity: List<WeatherEntity> = listOf(),
     @SerializedName("wind")
     val wind: Wind = Wind()
 )
