@@ -2,4 +2,17 @@
     <string name="app_name">Weather App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="city">City</string>
+    <string name="country">Country</string>
+    <string name="date">Date</string>
+    <string name="day">Day</string>
+    <string name="today">Today</string>
+    <string name="default_temp">20</string>
+    <string name="celsius_symbol">℃</string>
+    <string name="weather_condition_image">Weather Condition Image</string>
+    <string name="description">Description</string>
+    <string name="wind">Wind</string>
+    <string name="humidity">Humidity</string>
+    <string name="clouds">Clouds</string>
+    <string name="get_weather_here">Get Weather Here</string>
 </resources>

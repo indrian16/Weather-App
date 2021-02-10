@@ -8,4 +8,6 @@
     <color name="color_secondary">#ff5252</color>
     <color name="color_secondary_light">#ff867f</color>
     <color name="color_secondary_dark">#c50e29</color>
+    <color name="green_light">#c8e6c9</color>
+    <color name="blue_light">#b3e5fc</color>
 </resources>

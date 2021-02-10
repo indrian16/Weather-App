@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    >
+
+    <ImageView
+        android:id="@+id/img_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:contentDescription="@string/weather_condition_image"
+        android:src="@drawable/few_clouds_day"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_desc"
+        app:layout_constraintEnd_toStartOf="@+id/tv_temp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_temp" />
+
+    <TextView
+        android:id="@+id/tv_temp"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_temp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc"
+        app:layout_constraintEnd_toStartOf="@+id/tv_temp_symbol"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/img_condition"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        style="@style/TextAppearance.MdcTypographyStyles.Subtitle2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tv_temp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_temp" />
+
+    <TextView
+        android:id="@+id/tv_temp_symbol"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/celsius_symbol"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_temp"
+        app:layout_constraintTop_toTopOf="@+id/tv_temp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
