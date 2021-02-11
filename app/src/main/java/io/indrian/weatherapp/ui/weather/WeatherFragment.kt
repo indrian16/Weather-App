@@ -43,8 +43,14 @@ class WeatherFragment : Fragment() {
             }
             is WeatherState.Error -> {
                 hideLoading()
+                weatherDisplay(Weather())
             }
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.fetchWeatherByCity("jakarta")
     }
 
     override fun onCreateView(
@@ -85,7 +91,7 @@ class WeatherFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.fetchWeatherByCity("jakarta")
+        weatherDisplay(Weather())
         viewModel.weatherState.observe(this, weatherStateObserver)
 
         btn_get_weather.setOnClickListener {
