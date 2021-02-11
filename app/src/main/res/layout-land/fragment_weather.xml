@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.weather.WeatherFragment">
+
+    <TextView
+        android:id="@+id/tv_city"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/city"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_country"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/weather_center_layout"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_country"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/country"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tv_date"
+        app:layout_constraintEnd_toEndOf="@+id/tv_city"
+        app:layout_constraintStart_toStartOf="@+id/tv_city"
+        app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/TextAppearance.MdcTypographyStyles.Body1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/date"
+        app:layout_constraintBottom_toBottomOf="@+id/clouds_card_layout"
+        app:layout_constraintEnd_toEndOf="@+id/tv_city"
+        app:layout_constraintStart_toStartOf="@+id/tv_country"
+        app:layout_constraintTop_toBottomOf="@+id/tv_country" />
+
+    <TextView
+        android:id="@+id/tv_day"
+        style="@style/TextAppearance.MdcTypographyStyles.Headline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/today"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/weather_center_layout"
+        layout="@layout/weather_center_layout"
+        android:layout_width="270dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_day"
+        app:layout_constraintStart_toStartOf="@+id/tv_day"
+        app:layout_constraintTop_toBottomOf="@+id/tv_day" />
+
+    <include
+        android:id="@+id/wind_card_layout"
+        layout="@layout/wind_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/humidity_card_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <include
+        android:id="@+id/clouds_card_layout"
+        layout="@layout/clouds_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/humidity_card_layout"
+        app:layout_constraintStart_toStartOf="@+id/wind_card_layout"
+        app:layout_constraintTop_toBottomOf="@+id/humidity_card_layout" />
+
+    <include
+        android:id="@+id/humidity_card_layout"
+        layout="@layout/humidity_card_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/clouds_card_layout"
+        app:layout_constraintEnd_toEndOf="@+id/wind_card_layout"
+        app:layout_constraintStart_toStartOf="@+id/wind_card_layout"
+        app:layout_constraintTop_toBottomOf="@+id/wind_card_layout" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get_weather"
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:backgroundTint="@color/color_secondary"
+        app:cornerRadius="32dp"
+        app:icon="@drawable/ic_search_location_weather"
+        app:iconGravity="textStart"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/clouds_card_layout"
+        app:layout_constraintEnd_toEndOf="@+id/weather_center_layout"
+        app:layout_constraintStart_toEndOf="@+id/tv_country"
+        app:layout_constraintTop_toBottomOf="@+id/weather_center_layout"
+        app:strokeWidth="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
