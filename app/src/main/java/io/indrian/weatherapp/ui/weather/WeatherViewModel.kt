@@ -47,6 +47,30 @@ class WeatherViewModel(private val repository: Repository) : ViewModel() {
         compositeDisposable.add(disposable)
     }
 
+    fun fetchWeatherByCoordinate(lat: String, lon: String) {
+        val disposable = repository.getWeatherByCoordinate(lat, lon)
+            .subscribeOn(Schedulers.io())
+            // This feature is temporary
+            .delay(500, TimeUnit.MILLISECONDS, AndroidSchedulers.mainThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .doOnSubscribe {
+                Timber.d("WeatherState.Loading")
+                _weatherState.value = WeatherState.Loading
+            }
+            .subscribe(
+                { weather ->
+                    Timber.d("WeatherState.Success($weather)")
+                    _weatherState.value = WeatherState.Success(weather)
+                },
+                { error ->
+                    Timber.e("WeatherState.Error(${error.message})")
+                    _weatherState.value = WeatherState.Error(error.message.toString())
+                }
+            )
+
+        compositeDisposable.add(disposable)
+    }
+
     override fun onCleared() {
         compositeDisposable.clear()
         compositeDisposable.dispose()

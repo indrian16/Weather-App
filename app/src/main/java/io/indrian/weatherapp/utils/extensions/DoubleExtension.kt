@@ -8,5 +8,5 @@ fun Double.displayCelsius(): String {
 
 fun Double.displayWindSpeed(): String {
     val value = (this * 2.23694)
-    return Math.round(value).toString() + "km/h"
+    return value.roundToInt().toString() + "km/h"
 }
