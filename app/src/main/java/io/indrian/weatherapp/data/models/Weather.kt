@@ -17,7 +17,7 @@ data class Weather(
 
     // Weather
     val description: String = "",
-    val icon: String = "",
+    val icon: String = "02d",
     val main: String = "",
 
     // Coordinate

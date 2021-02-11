@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import com.bumptech.glide.Glide
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.karumi.dexter.Dexter
@@ -109,6 +110,10 @@ class WeatherFragment : Fragment() {
         tv_wind.text = weather.windSpeed.displayWindSpeed()
         tv_humidity.text = "${weather.humidity}%"
         tv_clouds.text = "${weather.cloudsAll}%"
+
+        Glide.with(this)
+                .load(weather.icon.displayWeatherCondition())
+                .into(img_condition)
     }
 
     private fun doGetWeatherByCoordinate(view: View) {
