@@ -15,8 +15,7 @@ class WeatherViewModel(private val repository: Repository) : ViewModel() {
     private val compositeDisposable = CompositeDisposable()
 
     private val _weatherState = MutableLiveData<WeatherState>()
-    val weatherState: LiveData<WeatherState>
-        get() = _weatherState
+    val weatherState: LiveData<WeatherState> = _weatherState
 
     init {
         Timber.d("WeatherState.Init")
